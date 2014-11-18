@@ -1,0 +1,22 @@
+{
+	"requirejs": {
+		"main": {
+			"options": {
+				"baseUrl": "",
+				"paths": {
+					"jquery":"js/jquery",
+					"banana":"js/banana",
+					"scrollpage":"js/scrollpage"
+				},
+				"web": {
+					"include": [
+						"jquery",
+						"banana",
+						"scrollpage"
+					],
+					"out": "dest/libs.js"
+				}
+			}
+		}
+	}
+}

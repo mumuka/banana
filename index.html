@@ -5,7 +5,10 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
 	<title>首页</title>
 </head>
-<script data-main="main" src="js/require.js"></script>
+<script data-main="main.min" src="js/require.js"></script>
+<script>
+	require.config({ urlArgs: "v=" + (new Date()).getTime() });
+</script>
 <body>
 <div class="page1">
 	
@@ -25,9 +28,6 @@
 	// });
 </script>
 </html>
-
-
-
 
 <!-- 宝华                17/26      100m  5500  13524069952   打不通-->
 <!-- 嘉利明珠城            19/25        130m    6200    15801801862   房东要找1家人

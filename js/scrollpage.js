@@ -1,4 +1,5 @@
 define(function(require){
-	var $=require('jquery')
-	console.log($)
+	return function(){
+		return "scrollpage"
+	}
 })
