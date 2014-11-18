@@ -1,5 +1,9 @@
 define(function(require) {
 	var $ = require('jquery')
+	var scrollpage=require('scrollpage')
+
+	console.log(scrollpage())
+
 	$("body").css({
 		"position": "absolute",
 		"top": 0,
@@ -8,6 +12,8 @@ define(function(require) {
 		"height": "100%",
 		"margin":0
 	})
+
+
 
 	document.body.addEventListener("mousewheel", function(event) {
 		console.dir(event);
