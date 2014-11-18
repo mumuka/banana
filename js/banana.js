@@ -13,8 +13,6 @@ define(function(require) {
 		"margin":0
 	})
 
-
-
 	document.body.addEventListener("mousewheel", function(event) {
 		console.dir(event);
 	});
