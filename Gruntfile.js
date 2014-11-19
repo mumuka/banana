@@ -1,41 +1,3 @@
-//module.exports= function(grunt) {
-// 	// 项目配置
-// 	grunt.initConfig({
-// 		pkg: grunt.file.readJSON('package.json'),
-// 		// concat: {
-// 		// 	options: {
-// 		// 		separator: ';'
-// 		// 	},
-// 		// 	dist: {
-// 		// 		js: ['js/Weixinshare.js', 'js/share.js'],
-// 		// 		dest: 'dest/libs.js'
-// 		// 	}
-// 		// },
-// 		uglify: {
-// 			options: {
-// 				banner: '/*! <%= pkg.file %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-// 			},
-// 			// build: {
-// 			// 	js: 'dest/<%=pkg.file %>.js',
-// 			// 	dest: 'dest/<%= pkg.file %>.min.js'
-// 			// }
-// 			my_target:{
-// 				files:{
-// 					'dest/share.min.js':['js/Weixinshare.js', 'js/share.js']
-// 				}
-// 			}
-// 		}
-// 	});
-// 	// 加载提供"uglify"任务的插件
-// 	// grunt.loadNpmTasks("grunt-contrib-concat");
-// 	grunt.loadNpmTasks('grunt-contrib-uglify');
-// 	// 默认任务
-// 	grunt.registerTask('default',['uglify']);
-// }
-
-//http://www.cnblogs.com/yexiaochai/p/3603389.html
-
-
 module.exports = function(grunt) {
 	// 项目配置
 	grunt.initConfig({
@@ -58,10 +20,9 @@ module.exports = function(grunt) {
 			development: {
 				options: {
 					paths: ["less"],
-					sourceMap:true,
-					sourceMapURL:"banana.css.map",
-					sourceMapFilename:"css/banana.css.map",
-					sourceMapBasepath:"../less/banana.less"
+					sourceMap: true,
+					sourceMapFilename: "banana.css.map",
+					sourceMapURL: "../banana.css.map",
 				},
 				files: {
 					"css/banana.css": "less/banana.less"
@@ -80,28 +41,33 @@ module.exports = function(grunt) {
 					"css/banana.min.css": "less/banana.less"
 				}
 			}
-		}
-
+		},
+		watch: {
+			client: {
+				//我们不需要配置额外的任务，watch任务已经内建LiveReload浏览器刷新的代码片段。
+				options: {
+					livereload: true
+				},
+				//'**'表示包含所有的子目录
+				//'*'表示包含所有的文件
+				files: ['*.html', 'css/*', 'js/*', 'images/**/*','less/*']
+			},
+			js: {
+				files: 'js/*.js',
+				tasks: ['requirejs']
+			},
+			less: {
+				files: 'less/*.less',
+				tasks: 'less'
+			},
+		},
 	});
 	//加载提供"uglify"任务的插件
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
 	//默认任务
-	grunt.registerTask('default', ['requirejs','less']);
+	grunt.registerTask('default', ['requirejs', 'less']);
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
