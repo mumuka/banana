@@ -46,3 +46,4 @@ Temporary Items
 # Folders to ignore
 node_modules
 bower_components
+*.psd
