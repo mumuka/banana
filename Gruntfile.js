@@ -1,4 +1,4 @@
-// module.exports = function(grunt) {
+//module.exports= function(grunt) {
 // 	// 项目配置
 // 	grunt.initConfig({
 // 		pkg: grunt.file.readJSON('package.json'),
@@ -48,15 +48,60 @@ module.exports = function(grunt) {
 					generateSourceMaps: true,
 					preserveLicenseComments: false,
 					include: [
-						'../main',
+						'main',
 					],
-					out: "main.min.js"
+					out: "build/main.js"
+				}
+			}
+		},
+		less: {
+			development: {
+				options: {
+					paths: ["less"],
+					sourceMap:true,
+					sourceMapURL:"banana.css.map",
+					sourceMapFilename:"css/banana.css.map",
+					sourceMapBasepath:"../less/banana.less"
+				},
+				files: {
+					"css/banana.css": "less/banana.less"
+				}
+			},
+			production: {
+				options: {
+					paths: ["less"],
+					cleancss: true,
+					modifyVars: {
+						imgPath: '"http://mycdn.com/path/to/images"',
+						bgColor: 'red'
+					}
+				},
+				files: {
+					"css/banana.min.css": "less/banana.less"
 				}
 			}
 		}
+
 	});
 	//加载提供"uglify"任务的插件
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	// 默认任务
-	grunt.registerTask('default', ['requirejs']);
+	grunt.loadNpmTasks('grunt-contrib-less');
+	//默认任务
+	grunt.registerTask('default', ['requirejs','less']);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
