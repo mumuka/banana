@@ -57,7 +57,11 @@ module.exports = function(grunt) {
 		less: {
 			development: {
 				options: {
-					paths: ["less"]
+					paths: ["less"],
+					sourceMap:true,
+					sourceMapURL:"banana.css.map",
+					sourceMapFilename:"css/banana.css.map",
+					sourceMapBasepath:"../less/banana.less"
 				},
 				files: {
 					"css/banana.css": "less/banana.less"
@@ -65,7 +69,7 @@ module.exports = function(grunt) {
 			},
 			production: {
 				options: {
-					paths: ["css"],
+					paths: ["less"],
 					cleancss: true,
 					modifyVars: {
 						imgPath: '"http://mycdn.com/path/to/images"',
@@ -73,7 +77,7 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					"css/banana.min.css": "css/banana.less"
+					"css/banana.min.css": "less/banana.less"
 				}
 			}
 		}
