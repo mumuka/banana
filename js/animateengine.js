@@ -22,36 +22,34 @@ define(function(require) {
 		},
 		pageinit: function(num) {
 			var _this = this
-			var pi = this.pageindex
 			var ph = this.windowsize.height
 			$(".currentpage").removeClass("currentpage")
-
 			//下一张page初始化位置
-console.log("下一张page初始化位置"+pi)
-			switch (pi) {
+			console.log("下一张page初始化位置"+pi)
+			switch (this.pageindex) {
 				case 0:
 					//第一张禁止向上翻
 					if (!num) {
 						console.log("最后最后")
 						return
 					} else {
-						pi = pi + num
+						this.pageindex = this.pageindex + num
 					}
 					break
 				case this.pagesize - 1:
 					//最后一张翻到第一张
 					if (!num) {
-						pi = pi + num
+						this.pageindex = this.pageindex + num
 					} else {
-						pi = 0
+						this.pageindex = 0
 					}
 					break
 				default:
-					pi = pi + num
+					this.pageindex = this.pageindex + num
 					break
 			}
-console.log(pi)
-
+			var pi = this.pageindex
+			console.log(pi)
 			$(".page:eq(" + pi + ")").css({
 				"transform": "translateY(" + (-ph*num) + "px)"
 			}).addClass("currentpage")
