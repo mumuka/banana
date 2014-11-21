@@ -11,10 +11,10 @@ define(function(require) {
 		},
 		pageback: function() {
 			// console.log(this)
-			this.pagerun(-1)
+			this.pagerun(1)
 		},
 		pagego: function() {
-			this.pagerun(1)
+			this.pagerun(-1)
 		},
 		pagerun: function(num) {
 			if (this.animaterunning) {
@@ -26,10 +26,10 @@ define(function(require) {
 		pageinit: function(num) {
 			var _this = this
 			var ph = this.windowsize.height
+			var oldpagei = this.pageindex
+			var newpagei = this.pageindex + num
 			$(".currentpage").removeClass("currentpage")
-			//下一张page初始化位置
-			// console.log("下一张page初始化位置" + this.pageindex)
-			console.log("this.pagesize"+this.pagesize)
+			//更新pageindex  按需更新newpagei
 			switch (this.pageindex) {
 				case 0:
 					//第一张禁止向上翻
@@ -37,7 +37,6 @@ define(function(require) {
 						// console.log("最后最后")
 						return
 					} else {
-						console.log(num)
 						this.pageindex = this.pageindex + num
 					}
 					break
@@ -47,41 +46,45 @@ define(function(require) {
 					if (num < 0) {
 						this.pageindex = this.pageindex + num
 					} else {
-						this.pageindex = "turn"
+						this.pageindex = 0
+						newpagei = 0
 					}
 					break
 				default:
-					this.pageindex = this.pageindex + num
+					this.pageindex = this.pageindex + num;
 					break
 			}
-			var pi = this.pageindex
-			console.log(pi)
-			$(".page:eq(" + pi + ")").css({
-				"transform": "translateY(" + (-ph * num) + "px)"
-			}).addClass("currentpage")
-
-			this.pageanimate(num)
+			//newpage位置初始化
+			$(".page:eq(" + newpagei + ")").css({
+				"transform": "translateY(" + (ph * num) + "px)",
+				"transition": "0s"
+			})
+			console.log(ph * num)
+			//页面切换动画
+			this.animaterunning = true
+			setTimeout(function() {
+				_this.pageanimate(oldpagei, newpagei, num)
+			}, 60)
 		},
-		pageanimate: function(num) {
+		pageanimate: function(oldpagei, newpagei, num) {
 			this.animaterunning = true
 			var _this = this
-			var pi = this.pageindex
 			var ph = this.windowsize.height
-
-			var turnnum=(typeof pi=="number")?pi:0
-			$(".page:eq(" + (turnnum) + ")").css({
+			$(".page:eq(" + newpagei + ")").css({
 				"transform": "translateY(" + 0 + "px)",
 				"transition": "0.5s ease-out"
-			})
-			turnnum=(typeof pi=="number")?pi:this.pagesize-2
-			$(".page:eq(" + (pi - num) + ")").css({
+			}).addClass("currentpage")
+
+			$(".page:eq(" + oldpagei + ")").css({
 				"transform": "translateY(" + (-ph * num) + "px)",
 				"transition": "0.5s ease-out"
 			})
 
 			function transitionend() {
 				$(".currentpage")[0].addEventListener('webkitTransitionEnd', transitionend, false);
-				setTimeout(function(){_this.animaterunning = false},500)
+				setTimeout(function() {
+					_this.animaterunning = false
+				}, 500)
 			}
 			$(".currentpage")[0].addEventListener('webkitTransitionEnd', transitionend, false);
 		},
