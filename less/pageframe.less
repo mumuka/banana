@@ -13,6 +13,7 @@ body{
 	#gradient > .vertical(#20164e,#31cae5,0%,100%);
 }
 .page{
+	.translate(0,100%);
 	&:extend(body);
 	.title{
 		text-align: center;
@@ -44,6 +45,9 @@ body{
 			text-decoration: none;
 		}
 	}
+}
+.page:first-child{
+	.translate(0,0);
 }
 @-webkit-keyframes testadmin{
 	0%{transform:scale(1);}

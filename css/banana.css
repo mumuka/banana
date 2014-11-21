@@ -6308,6 +6308,12 @@ body,
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff20164e', endColorstr='#ff31cae5', GradientType=0);
 }
+.page {
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
 .page .title {
   text-align: center;
   width: 100%;
@@ -6339,6 +6345,12 @@ body,
   color: #fff;
   font-size: 18px;
   text-decoration: none;
+}
+.page:first-child {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 @-webkit-keyframes testadmin {
   0% {
