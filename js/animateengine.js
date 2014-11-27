@@ -81,7 +81,7 @@ define(function(require) {
 			})
 
 			function transitionend() {
-				$(".currentpage")[0].addEventListener('webkitTransitionEnd', transitionend, false);
+				$(".currentpage")[0].removeEventListener('webkitTransitionEnd', transitionend, false);
 				setTimeout(function() {
 					_this.animaterunning = false
 				}, 500)

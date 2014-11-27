@@ -28,19 +28,19 @@ module.exports = function(grunt) {
 					"css/banana.css": "less/banana.less"
 				}
 			},
-			production: {
-				options: {
-					paths: ["less"],
-					cleancss: true,
-					modifyVars: {
-						imgPath: '"http://mycdn.com/path/to/images"',
-						bgColor: 'red'
-					}
-				},
-				files: {
-					"css/banana.min.css": "less/banana.less"
-				}
-			}
+			// production: {
+			// 	options: {
+			// 		paths: ["less"],
+			// 		cleancss: true,
+			// 		modifyVars: {
+			// 			imgPath: '"http://mycdn.com/path/to/images"',
+			// 			bgColor: 'red'
+			// 		}
+			// 	},
+			// 	files: {
+			// 		"css/banana.min.css": "less/banana.less"
+			// 	}
+			// }
 		},
 		watch: {
 			client: {
@@ -52,10 +52,10 @@ module.exports = function(grunt) {
 				//'*'表示包含所有的文件
 				files: ['*.html', 'css/*', 'js/*', 'images/**/*','less/*']
 			},
-			js: {
-				files: 'js/*.js',
-				tasks: ['requirejs']
-			},
+			// js: {
+			// 	files: 'js/*.js',
+			// 	tasks: ['requirejs']
+			// },
 			less: {
 				files: 'less/*.less',
 				tasks: 'less'
