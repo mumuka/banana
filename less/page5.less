@@ -1,0 +1,40 @@
+.page{
+	//page5
+	&:nth-child(5){
+		.textbox{
+			h3{
+				color:#fff;
+				font-size: 30px;
+			}
+			.text{
+				height: 70px;
+				line-height: 70px;
+				background-color: #70bf40;
+			}
+		}
+		.animatemass{
+			&:nth-child(1){
+				background-size:auto 100%; 
+			}
+		}
+		.animatemass51{
+			background-image: url(../images/pic5_1.png);
+			.animatemass51_(scale(0));
+			.all-animation(animatemass51 4s ease-in-out 0s infinite);
+		}
+	}
+}
+
+//page5
+.animatemass51_(@a){.animatemass1_(translateX(-20%) translateY(0%) @a);}
+
+@-webkit-keyframes animatemass51{
+	0%{.animatemass51_(scale(0));}
+	100%{.animatemass51_(scale(0.5));}
+}
+
+@keyframes animatemass51{
+	0%{.animatemass51_(scale(0));}
+	100%{.animatemass51_(scale(0.5));}
+}
+

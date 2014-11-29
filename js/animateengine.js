@@ -1,6 +1,9 @@
 define(function(require) {
 	var $ = require("jquery")
-
+	var checkbrowser = require("CheckBrowser")
+		// console.dir(checkbrowser.browser)
+	var TransitionEnd = checkbrowser.browser.lowercase + "TransitionEnd"
+	TransitionEnd = "transitionend"
 	var animateengine = {
 		pageindex: 0,
 		pagesize: $(".page").size(),
@@ -11,10 +14,20 @@ define(function(require) {
 		},
 		pageback: function() {
 			// console.log(this)
-			this.pagerun(1)
+			this.pagerun(-1)
 		},
 		pagego: function() {
-			this.pagerun(-1)
+			this.pagerun(1)
+		},
+		pagegoto: function(pagenum) {
+			var oldpage = this.pageindex
+			var newpage = pagenum - 1
+			var num = oldpage > newpage ? -1 : 1
+			if (oldpage === newpage) {
+				return
+			}
+			this.pageanimate(oldpage, newpage, num)
+			this.pageindex = newpage
 		},
 		pagerun: function(num) {
 			if (this.animaterunning) {
@@ -29,7 +42,7 @@ define(function(require) {
 			var oldpagei = this.pageindex
 			var newpagei = this.pageindex + num
 			$(".currentpage").removeClass("currentpage")
-			//更新pageindex  按需更新newpagei
+				//更新pageindex  按需更新newpagei
 			switch (this.pageindex) {
 				case 0:
 					//第一张禁止向上翻
@@ -60,7 +73,7 @@ define(function(require) {
 				"transition": "0s"
 			})
 			console.log(ph * num)
-			//页面切换动画
+				//页面切换动画
 			this.animaterunning = true
 			setTimeout(function() {
 				_this.pageanimate(oldpagei, newpagei, num)
@@ -81,14 +94,18 @@ define(function(require) {
 			})
 
 			function transitionend() {
-				$(".currentpage")[0].removeEventListener('webkitTransitionEnd', transitionend, false);
+				$(".currentpage")[0].removeEventListener(TransitionEnd, transitionend, false);
 				setTimeout(function() {
 					_this.animaterunning = false
 				}, 500)
 			}
-			$(".currentpage")[0].addEventListener('webkitTransitionEnd', transitionend, false);
+			$(".currentpage")[0].addEventListener(TransitionEnd, transitionend, false);
 		},
 
 	}
+
+
+
 	return animateengine;
+	// var style=window.getComputedStyle(document.documentElement, '')
 })

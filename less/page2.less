@@ -1,0 +1,128 @@
+.page{
+	//page2
+	&:nth-child(2){
+		//圈圈
+		.animatemass{
+			background-size:auto 100%; 
+		}
+		.animatemass21{
+			background-image: url(../images/pic2_1.png);
+			.animatemass21_(rotate(0deg));
+			.all-animation( animatemass21 2s ease-in-out 0s infinite);
+		}
+		.animatemass22{
+			background-image: url(../images/pic2_2.png);
+			.animatemass21_(rotate(1080deg));
+			.all-animation( animatemass22 2s ease-in-out 0s infinite);
+		}
+		.animatemass23{
+			background-image: url(../images/pic2_3.png);
+			.animatemass21_(rotate(0deg));
+		}
+		.animatemass24{
+			background-image: url(../images/logo.png);
+			.animatemass1_(translate(-20%,0) scale(0.1));
+		}
+
+
+		//圈圈
+		@animatemass25_x:-4%;
+		@animatemass25_y:22%;
+		.animatemass25{
+			background-image: url(../images/pic2_5.png);
+			.animatemass1_(translate(@animatemass25_x,@animatemass25_y) scale(0.09));
+		}
+		@animatemass26_x:-33%;
+		@animatemass26_y:23%;
+		.animatemass26{
+			background-image: url(../images/pic2_6.png);
+			.animatemass1_(translate(@animatemass26_x,@animatemass26_y) scale(0.1));
+		}
+		@animatemass27_x:-47%;
+		@animatemass27_y:-5%;
+		.animatemass27{
+			background-image: url(../images/pic2_7.png);
+			.animatemass1_(translate(@animatemass27_x,@animatemass27_y) scale(0.08));
+		}
+		@animatemass28_x:-27%;
+		@animatemass28_y:-22%;
+		.animatemass28{
+			background-image: url(../images/pic2_8.png);
+			.animatemass1_(translate(@animatemass28_x,@animatemass28_y) scale(0.07));
+		}
+		@animatemass29_x:4%;
+		@animatemass29_y:-9%;
+		.animatemass29{
+			background-image: url(../images/pic2_9.png);
+			.animatemass1_(translate(@animatemass29_x,@animatemass29_y) scale(0.08));
+		}
+
+
+		//光
+		.animatemass210,.animatemass211,.animatemass212,.animatemass213,.animatemass214{
+			background-size:50% auto;
+		}
+		.animatemass210{
+			background-image: url(../images/pic2_10.png);
+			.animatemass210_(translate(@animatemass25_x,@animatemass25_y) rotate(-125deg));
+			background-position: 200% 50%;
+			.all-animation(animatemass210 2s ease-in-out 0s infinite);
+		}
+		.animatemass211{
+			background-image: url(../images/pic2_10.png);
+			.animatemass210_(translate(@animatemass26_x,@animatemass26_y) rotate(-61deg));
+			background-position: 200% 50%;
+			.all-animation(animatemass210 2s ease-in-out 0s infinite);
+		}
+		.animatemass212{
+			background-image: url(../images/pic2_10.png);
+			.animatemass210_(translate(@animatemass27_x,@animatemass27_y) rotate(11deg));
+			background-position: 200% 50%;
+			.all-animation(animatemass210 2s ease-in-out 0s infinite);
+		}
+		.animatemass213{
+			background-image: url(../images/pic2_10.png);
+			.animatemass210_(translate(@animatemass28_x,@animatemass28_y) rotate(70deg));
+			background-position: 200% 50%;
+			.all-animation(animatemass210 2s ease-in-out 0s infinite);
+		}
+		.animatemass214{
+			background-image: url(../images/pic2_10.png);
+			.animatemass210_(translate(@animatemass29_x,@animatemass29_y) rotate(160deg));
+			background-position: 200% 50%;
+			.all-animation(animatemass210 2s ease-in-out 0s infinite);
+		}
+	}
+}
+
+//page2
+.animatemass21_(@a){.animatemass1_(translate(-20%,0) scale(0.3) @a);}
+.animatemass210_(@a){.animatemass1_(@a scale(0.35));}
+
+@-webkit-keyframes animatemass21{
+	0%{.animatemass21_(rotate(0deg));}
+	100%{.animatemass21_(rotate(1080deg));}
+}
+@-webkit-keyframes animatemass22{
+	0%{.animatemass21_(rotate(1080deg));}
+	100%{.animatemass21_(rotate(0deg));}
+}
+@-webkit-keyframes animatemass210{
+	0%{background-position:200%;}
+	50%{background-position:200%;}
+	100%{background-position:100%;}
+}
+
+@keyframes animatemass21{
+	0%{.animatemass21_(rotate(0deg));}
+	100%{.animatemass21_(rotate(1080deg));}
+}
+@keyframes animatemass22{
+	0%{.animatemass21_(rotate(1080deg));}
+	100%{.animatemass21_(rotate(0deg));}
+}
+@keyframes animatemass210{
+	0%{background-position:200%;}
+	50%{background-position:200%;}
+	100%{background-position:100%;}
+}

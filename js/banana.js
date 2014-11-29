@@ -1,10 +1,7 @@
 define(function(require) {
 	var $ = require('jquery')
 
-
 	//设置宽高
-
-
 	var haschagnagsize=0
 	chagnagsize()
 	function chagnagsize(){
@@ -32,7 +29,8 @@ define(function(require) {
 		var pccontrol=require("pccontrol")
 		pccontrol.init()
 	}else{
-
+		var mobilecontrol=require("mobilecontrol")
+		mobilecontrol.init()
 	}
 
 
