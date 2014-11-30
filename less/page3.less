@@ -1,0 +1,241 @@
+.page{
+	//page3
+	&:nth-child(3){
+		//盒子
+		.animatemass31{
+			background-image: url(../images/pic3_1.png);
+			.animatemass31_(translateX(-100%));
+			.all-animation( animatemass31 4s ease-in-out 0s infinite);
+		}
+		.animatemass32{
+			background-image: url(../images/pic3_1.png);
+			.animatemass32_(translateX(-100%));
+			.all-animation( animatemass32 4s ease-in-out 0s infinite);
+		}
+		.animatemass33{
+			background-image: url(../images/pic3_1.png);
+			.animatemass33_(translateX(-100%));
+			.all-animation( animatemass33 4s ease-in-out 0s infinite);
+		}
+
+		//钟
+		.animatemass34{
+			background-image: url(../images/pic3_4.png);
+			.animatemass34_(rotate(0deg));
+			.all-animation( animatemass34 4s ease-in-out 0s infinite);
+		}
+		.animatemass35{
+			background-image: url(../images/pic3_5.png);
+			.animatemass34_(rotate(0deg));
+			// .all-animation( animatemass33 4s ease-in-out 0s infinite);
+		}
+
+		//车子
+		.animatemass36{
+			background-image: url(../images/pic3_6.png);
+			.animatemass36_();
+		}
+		.animatemass37{
+			.animatemass37_(scale(0.1));
+			background-image: url(../images/pic3_7.png);
+			.all-animation(animatemass37 2s linear 0s infinite);
+		}
+		.animatemass38{
+			.animatemass38_(scale(0.1));
+			background-image: url(../images/pic3_7.png);
+			.all-animation(animatemass38 2s linear 0s infinite);
+		}
+
+		//光
+		.animatemass39{
+			background-image: url(../images/pic2_10.png);
+			.animatemass39_(translateX(-50%));
+			.all-animation(animatemass39 4s linear 0s infinite);
+		}
+		.animatemass310{
+			background-image: url(../images/pic2_10.png);
+			.animatemass310_(translateX(-50%));
+			.all-animation(animatemass310 4s linear 0s infinite);
+		}
+		.animatemass311{
+			background-image: url(../images/pic2_10.png);
+			.animatemass311_(translateX(-50%));
+			.all-animation(animatemass311 4s linear 0s infinite);
+		}
+		.animatemass312{
+			background-image: url(../images/pic2_10.png);
+			.animatemass312_(translateX(-50%));
+			.all-animation(animatemass312 4s linear 0s infinite);
+		}
+	}
+}
+
+//page3
+.animatemass31_(@a){.animatemass1_(@a translateY(-20%) scale(0.08));}
+.animatemass32_(@a){.animatemass1_(@a translateY(-0%) scale(0.13));}
+.animatemass33_(@a){.animatemass1_(@a translateY(20%) scale(0.2));}
+
+.animatemass34_(@a){.animatemass1_(translateX(-11.5%) translateY(-6.5%) scale(0.45) @a);}
+
+@animatemass36_x:11.5%;
+@animatemass36_y:6.5%;
+.animatemass36_(){.animatemass1_(translate(@animatemass36_x,@animatemass36_y) scale(0.25));}
+//4.4%,11.9%
+.animatemass37_(@a){.animatemass1_(translate(@animatemass36_x+7.4%,@animatemass36_y+4.9%) @a);}
+//-10.3%,11.9%
+.animatemass38_(@a){.animatemass1_(translate(@animatemass36_x+-7.3%,@animatemass36_y+4.9%) @a);}
+
+.animatemass39_(@a){.animatemass1_(@a  translateY(-30%) scale(0.1) rotate(180deg));}
+.animatemass310_(@a){.animatemass1_(@a  translateY(-12%) scale(0.15) rotate(180deg));}
+.animatemass311_(@a){.animatemass1_(@a  translateY(-10%) scale(0.2) rotate(180deg));}
+.animatemass312_(@a){.animatemass1_(@a  translateY(10%) scale(0.3) rotate(180deg));}
+
+//光
+@-webkit-keyframes animatemass39{
+	0%{.animatemass39_(translateX(-100%));}
+	10%{.animatemass39_(translateX(-100%));}
+	25%{.animatemass39_(translateX(-65%));}
+	55%{.animatemass39_(translateX(-55%));}
+	100%{.animatemass39_(translateX(100%));}
+}
+@-webkit-keyframes animatemass310{
+	0%{.animatemass310_(translateX(-100%));}
+	25%{.animatemass310_(translateX(-80%));}
+	50%{.animatemass310_(translateX(-70%));}
+	90%{.animatemass310_(translateX(80%));}
+	100%{.animatemass310_(translateX(100%));}
+}
+@-webkit-keyframes animatemass311{
+	0%{.animatemass311_(translateX(-100%));}
+	25%{.animatemass311_(translateX(-60%));}
+	50%{.animatemass311_(translateX(-55%));}
+	90%{.animatemass311_(translateX(100%));}
+	100%{.animatemass311_(translateX(100%));}
+}
+@-webkit-keyframes animatemass312{
+	0%{.animatemass312_(translateX(-100%));}
+	35%{.animatemass312_(translateX(-100%));}
+	45%{.animatemass312_(translateX(-55%));}
+	65%{.animatemass312_(translateX(-50%));}
+	100%{.animatemass312_(translateX(100%));}
+}
+
+//盒子
+@-webkit-keyframes animatemass31{
+	0%{.animatemass31_(translateX(-100%));}
+	20%{.animatemass31_(translateX(-100%));}
+	50%{.animatemass31_(translateX(-35%));}
+	75%{.animatemass31_(translateX(-30%));}
+	100%{.animatemass31_(translateX(100%));}
+}
+@-webkit-keyframes animatemass32{
+	0%{.animatemass32_(translateX(-100%));}
+	20%{.animatemass32_(translateX(-100%));}
+	50%{.animatemass32_(translateX(-10%));}
+	75%{.animatemass32_(translateX(-5%));}
+	100%{.animatemass32_(translateX(100%));}
+}
+@-webkit-keyframes animatemass33{
+	0%{.animatemass33_(translateX(-100%));}
+	20%{.animatemass33_(translateX(-100%));}
+	50%{.animatemass33_(translateX(-40%));}
+	75%{.animatemass33_(translateX(-35%));}
+	100%{.animatemass33_(translateX(100%));}
+}
+//钟
+@-webkit-keyframes animatemass34{
+	0%{.animatemass34_(rotate(0deg));}
+	100%{.animatemass34_(rotate(720deg));}
+}
+
+//轮子
+@-webkit-keyframes animatemass37{
+	0%{.animatemass37_(scale(0.11));}
+	25%{.animatemass37_(scale(0.09));}
+	50%{.animatemass37_(scale(0.11));}
+	75%{.animatemass37_(scale(0.09));}
+	100%{.animatemass37_(scale(0.11));}
+}
+@-webkit-keyframes animatemass38{
+	0%{.animatemass38_(scale(0.11));}
+	25%{.animatemass38_(scale(0.09));}
+	50%{.animatemass38_(scale(0.11));}
+	75%{.animatemass38_(scale(0.09));}
+	100%{.animatemass38_(scale(0.11));}
+}
+
+// --------------------------------
+
+//光
+@keyframes animatemass39{
+	0%{.animatemass39_(translateX(-100%));}
+	10%{.animatemass39_(translateX(-100%));}
+	25%{.animatemass39_(translateX(-65%));}
+	55%{.animatemass39_(translateX(-55%));}
+	100%{.animatemass39_(translateX(100%));}
+}
+@keyframes animatemass310{
+	0%{.animatemass310_(translateX(-100%));}
+	25%{.animatemass310_(translateX(-80%));}
+	50%{.animatemass310_(translateX(-70%));}
+	90%{.animatemass310_(translateX(80%));}
+	100%{.animatemass310_(translateX(100%));}
+}
+@keyframes animatemass311{
+	0%{.animatemass311_(translateX(-100%));}
+	25%{.animatemass311_(translateX(-60%));}
+	50%{.animatemass311_(translateX(-55%));}
+	90%{.animatemass311_(translateX(100%));}
+	100%{.animatemass311_(translateX(100%));}
+}
+@keyframes animatemass312{
+	0%{.animatemass312_(translateX(-100%));}
+	35%{.animatemass312_(translateX(-100%));}
+	45%{.animatemass312_(translateX(-55%));}
+	65%{.animatemass312_(translateX(-50%));}
+	100%{.animatemass312_(translateX(100%));}
+}
+
+//盒子
+@keyframes animatemass31{
+	0%{.animatemass31_(translateX(-100%));}
+	20%{.animatemass31_(translateX(-100%));}
+	50%{.animatemass31_(translateX(-35%));}
+	75%{.animatemass31_(translateX(-30%));}
+	100%{.animatemass31_(translateX(100%));}
+}
+@keyframes animatemass32{
+	0%{.animatemass32_(translateX(-100%));}
+	20%{.animatemass32_(translateX(-100%));}
+	50%{.animatemass32_(translateX(-10%));}
+	75%{.animatemass32_(translateX(-5%));}
+	100%{.animatemass32_(translateX(100%));}
+}
+@keyframes animatemass33{
+	0%{.animatemass33_(translateX(-100%));}
+	20%{.animatemass33_(translateX(-100%));}
+	50%{.animatemass33_(translateX(-40%));}
+	75%{.animatemass33_(translateX(-35%));}
+	100%{.animatemass33_(translateX(100%));}
+}
+//钟
+@keyframes animatemass34{
+	0%{.animatemass34_(rotate(0deg));}
+	100%{.animatemass34_(rotate(720deg));}
+}
+
+//轮子
+@keyframes animatemass37{
+	0%{.animatemass37_(scale(0.11));}
+	25%{.animatemass37_(scale(0.09));}
+	50%{.animatemass37_(scale(0.11));}
+	75%{.animatemass37_(scale(0.09));}
+	100%{.animatemass37_(scale(0.11));}
+}
+@keyframes animatemass38{
+	0%{.animatemass38_(scale(0.11));}
+	25%{.animatemass38_(scale(0.09));}
+	50%{.animatemass38_(scale(0.11));}
+	75%{.animatemass38_(scale(0.09));}
+	100%{.animatemass38_(scale(0.11));}
+}
