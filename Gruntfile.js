@@ -49,17 +49,17 @@ module.exports = function(grunt) {
 					livereload: true
 				},
 				//'**'表示包含所有的子目录
-				//'*'表示包含所有的文件
-				files: ['*.html', 'css/*', 'js/*', 'images/**/*','less/*']
+				//'*'表示包含所有的文件,'less/*'
+				files: ['*.html', 'css/*', 'js/*', 'images/**/*']
 			},
 			js: {
 				files: 'js/*.js',
 				tasks: ['requirejs']
 			},
-			less: {
-				files: 'less/*.less',
-				tasks: 'less'
-			},
+			// less: {
+			// 	files: 'less/*.less',
+			// 	tasks: 'less'
+			// },
 		},
 	});
 	//加载提供"uglify"任务的插件
